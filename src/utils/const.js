@@ -1,48 +1,57 @@
-const CardCount = {
-  ALL: 5,
+export const FilmCount = {
+  ALL: 15,
   TOP_RATED: 2,
   MOST_COMMENTED: 2,
 };
 
-export const FilmsSection = [
+export const FilmsSectionsTitles = [
   {
     title: 'All movies. Upcoming',
+    dataAtr: 'all-movies',
     type: 'upcoming',
-    count: CardCount.ALL,
   },
   {
     title: 'Top rated',
+    dataAtr: 'top-rated',
     type: 'extra',
-    count: CardCount.TOP_RATED,
   },
   {
     title: 'Most commented',
+    dataAtr: 'most-commented',
     type: 'extra',
-    count: CardCount.MOST_COMMENTED,
   },
 ];
 
 export const Filters = [
   {
     title: 'All movies',
-    href: 'all',
+    link: 'all',
   },
   {
     title: 'Watchlist',
-    href: 'watchlist',
+    link: 'watchlist',
   },
   {
     title: 'History',
-    href: 'history',
+    link: 'history',
   },
   {
     title: 'Favorites',
-    href: 'favorites',
+    link: 'favorites',
   },
 ];
 
-export const SortSection = [
+export const SORT_TITLE = [
   'Sort by default',
   'Sort by date',
   'Sort by rating',
 ];
+
+export const COMMENTS_EMOTION = [
+  'smile',
+  'sleeping',
+  'puke',
+  'angry',
+];
+
+export const DESCRIPTION_LENGTH = 140;

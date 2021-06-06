@@ -1,10 +1,10 @@
 import {Filters} from '../utils/const.js';
 
 const createFilterItemMarkup = (item, isActive) => {
-  const {title, href} = item;
+  const {title, link} = item;
   const isCount = title !==  'All movies' ? '<span class="main-navigation__item-count">8</span>' : '' ;
 
-  return `<a href="#${href}" class="main-navigation__item ${isActive ? 'main-navigation__item--active' : ''}">${title}
+  return `<a href="#${link}" class="main-navigation__item ${isActive ? 'main-navigation__item--active' : ''}">${title}
   ${isCount}
     </a>`;
 };
