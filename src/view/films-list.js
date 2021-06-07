@@ -1,18 +1,16 @@
 import {FilmsSectionsTitles} from '../utils/const.js';
-import {createButtonShowMoreTemplate} from './show-more.js';
+
 const createFilmsSectionMarkup = (data) => {
   const {title, type, dataAtr} = data;
   const upcomingTitle = type === 'upcoming';
   const classTitle = upcomingTitle ? 'films-list' : 'films-list films-list--extra';
   const classhidden = upcomingTitle ? 'films-list__title visually-hidden' : 'films-list__title';
-  const isButton = upcomingTitle ? createButtonShowMoreTemplate() : '';
   const dataAttribute = `data-list="${dataAtr}"`;
 
   return `<section class="${classTitle}">
     <h2 class="${classhidden}">${title}</h2>
     <div class="films-list__container" ${dataAttribute}>
     </div>
-    ${isButton}
   </section>`;
 };
 

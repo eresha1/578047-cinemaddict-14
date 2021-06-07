@@ -1,5 +1,4 @@
-
-// import {getUsersRank} from "../utils/common.js";
+// import {getUsersRank} from "./common.js";
 // import {getObjectElementsGenres, getTopGenre} from "../utils/get-genres.js";
 // import {GENRES} from './film.js';
 

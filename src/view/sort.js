@@ -10,7 +10,7 @@ const createSortMarkup = () => {
 
 
 export const createSortTemplate = () => {
-  return `  <ul class="sort">
+  return `<ul class="sort">
   ${createSortMarkup()}
 </ul>`;
 };

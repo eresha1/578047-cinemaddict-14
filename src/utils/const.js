@@ -2,6 +2,7 @@ export const FilmCount = {
   ALL: 15,
   TOP_RATED: 2,
   MOST_COMMENTED: 2,
+  FILM_COUNT_PER_STEP: 5,
 };
 
 export const FilmsSectionsTitles = [

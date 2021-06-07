@@ -1,8 +1,8 @@
 import {createFiltersTemplate} from './filters.js';
 
-export const createNavigationTemplate = () => {
+export const createNavigationTemplate = (films) => {
   return `<nav class="main-navigation">
-  ${createFiltersTemplate()}
+  ${createFiltersTemplate(films)}
   <a href="#stats" class="main-navigation__additional">Stats</a>
 </nav>`;
 };
