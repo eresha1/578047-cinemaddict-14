@@ -1,20 +1,19 @@
-import {FilmsSectionsTitles} from '../utils/const.js';
+import AbstractView from './abstract.js';
 
-const createFilmsSectionMarkup = (data) => {
-  const {title, type, dataAtr} = data;
-  const upcomingTitle = type === 'upcoming';
-  const classTitle = upcomingTitle ? 'films-list' : 'films-list films-list--extra';
-  const classhidden = upcomingTitle ? 'films-list__title visually-hidden' : 'films-list__title';
-  const dataAttribute = `data-list="${dataAtr}"`;
-
-  return `<section class="${classTitle}">
-    <h2 class="${classhidden}">${title}</h2>
-    <div class="films-list__container" ${dataAttribute}>
-    </div>
+const createFilmsListTemplate = (extra = '', title = 'All movies. Upcoming') => {
+  return  `<section class="films-list${extra}">
+    <h2 class="films-list__title ${extra ? '' : `visually-hidden`}">${title}</h2>
   </section>`;
 };
 
-export const createFilmsListTemplate = () => {
-  return FilmsSectionsTitles.map((item) =>
-    createFilmsSectionMarkup(item)).join('\n');
+export default class FilmsList extends AbstractView {
+  constructor(extra, title) {
+    super();
+    this._extra = extra;
+    this._title = title;
+  }
+
+  getTemplate() {
+    return createFilmsListTemplate(this._extra, this._title);
+  };
 };

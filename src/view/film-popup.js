@@ -1,3 +1,4 @@
+import AbstractView from './abstract.js';
 import {getFullDateFormat, runtimeAdapter, getCommentDateFormat} from '../utils/time-format.js';
 import {COMMENTS_EMOTION} from '../utils/const.js';
 
@@ -48,7 +49,7 @@ const createCommentsTemplate = (comments) => {
   }).join('\n');
 };
 
-export const createFilmPopupTemplate = (film) => {
+const createFilmPopupTemplate = (film) => {
   const {title, originalTitle, rating, ageRating, dateRelease, duration, genres, poster, description, writers, producer, actors, countries,  comments, isFavorite, isAtWatchlist, isWatched} = film;
 
   const releaseFullFormat = getFullDateFormat(dateRelease);
@@ -159,3 +160,13 @@ export const createFilmPopupTemplate = (film) => {
   </form>
 </section>`;
 };
+
+export default class FilmPopup extends AbstractView {
+  constructor(film) {
+    super();
+    this._film = film;
+  }
+  getTemplate() {
+    return createFilmPopupTemplate(this._film);
+  }
+}

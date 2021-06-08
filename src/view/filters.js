@@ -1,3 +1,4 @@
+import AbstractView from './abstract.js';
 import {generateFilters} from '../utils/filters.js';
 
 const createFilterItemMarkup = (item, isActive) => {
@@ -14,8 +15,18 @@ const createFiltersMarkup = (films) => {
   return filters.map((item, id) => createFilterItemMarkup(item, id === 0)).join('\n');
 };
 
-export const createFiltersTemplate = (films) => {
+const createFiltersTemplate = (films) => {
   return `<div class="main-navigation__items">
   ${createFiltersMarkup(films)}
   </div>`;
 };
+
+export default class Filters extends AbstractView {
+  constructor(films) {
+    super();
+    this._films = films;
+  }
+  getTemplate() {
+    return createFiltersTemplate(this._films);
+  }
+}

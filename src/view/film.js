@@ -1,8 +1,9 @@
+import AbstractView from './abstract.js';
 import {getShortDateFormat, runtimeAdapter} from '../utils/time-format.js';
 import {getShortDescription} from '../utils/common.js';
 import {DESCRIPTION_LENGTH} from '../utils/const.js';
 
-export const createFilmTemplate = (film) => {
+const createFilmTemplate = (film) => {
   const {title, rating, dateRelease, duration, genres, poster, description, comments, isFavorite, isAtWatchlist, isWatched} = film;
   const releaseShortFormat = getShortDateFormat(dateRelease);
   const durationFormat = runtimeAdapter(duration);
@@ -30,3 +31,13 @@ export const createFilmTemplate = (film) => {
   </div>
 </article>`;
 };
+
+export default class Film extends AbstractView {
+  constructor(film) {
+    super();
+    this._film = film;
+  }
+  getTemplate() {
+    return createFilmTemplate(this._film);
+  }
+}

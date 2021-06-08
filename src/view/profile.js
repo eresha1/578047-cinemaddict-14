@@ -1,3 +1,4 @@
+import AbstractView from './abstract.js';
 import {getUsersRank} from '../utils/common.js';
 
 const getMarkupProfile = (films) => {
@@ -7,8 +8,18 @@ const getMarkupProfile = (films) => {
   <img class="profile__avatar" src="images/bitmap@2x.png" alt="Avatar" width="35" height="35">`;
 };
 
-export const createProfileTemplate = (films) => {
+const createProfileTemplate = (films) => {
   return `<section class="header__profile profile">
 ${getMarkupProfile(films)}
 </section>`;
 };
+
+export default class Profile extends AbstractView {
+  constructor(films) {
+    super();
+    this._films = films;
+  }
+  getTemplate() {
+    return createProfileTemplate(this._films);
+  }
+}

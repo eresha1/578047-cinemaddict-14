@@ -1,8 +1,16 @@
-import {createFiltersTemplate} from './filters.js';
+import AbstractView from './abstract.js';
 
-export const createNavigationTemplate = (films) => {
+const createNavigationTemplate = (films) => {
   return `<nav class="main-navigation">
-  ${createFiltersTemplate(films)}
-  <a href="#stats" class="main-navigation__additional">Stats</a>
-</nav>`;
+  </nav>`;
 };
+
+export default class Navigation extends AbstractView {
+  constructor(films) {
+    super();
+    this._films = films;
+  }
+  getTemplate() {
+    return createNavigationTemplate(this._films);
+  }
+}
