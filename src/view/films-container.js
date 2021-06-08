@@ -1,8 +1,8 @@
-import AbstractComponent from "./abstract.js";
+import AbstractComponent from './abstract.js';
 
 const createFilmsContainerTemplate = () => {
   return (
-    `<div class="films-list__container"></div>`
+    '<div class="films-list__container"></div>'
   );
 };
 
