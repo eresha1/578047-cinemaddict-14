@@ -5,6 +5,13 @@ export const FilmCount = {
   FILM_COUNT_PER_STEP: 5,
 };
 
+export const ShowingFilmsCount = {
+  ON_START: 5,
+  FILM_COUNT_PER_STEP: 5,
+  EXTRA_FILM: 2
+};
+
+
 export const FilmsSectionsTitles = [
   {
     title: 'All movies. Upcoming',
