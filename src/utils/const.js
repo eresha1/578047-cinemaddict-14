@@ -1,14 +1,13 @@
 export const FilmCount = {
-  ALL: 15,
+  ALL: 22,
   TOP_RATED: 2,
   MOST_COMMENTED: 2,
-  FILM_COUNT_PER_STEP: 5,
 };
 
 export const ShowingFilmsCount = {
   ON_START: 5,
   FILM_COUNT_PER_STEP: 5,
-  EXTRA_FILM: 2
+  EXTRA_FILM: 2,
 };
 
 
